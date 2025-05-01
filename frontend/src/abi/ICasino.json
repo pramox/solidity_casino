@@ -1,0 +1,309 @@
+{
+  "contractName": "ICasino",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "DealerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "DealerRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerRemoved",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"DealerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"DealerRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnerRemoved\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ICasino.sol\":\"ICasino\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ICasino.sol\":{\"keccak256\":\"0xc5bf410d5d8169a48bca335bfadc32937d37f2406b4af515023a873ac62c799d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ef4d96a4517d31d6b686a1f3b3d894ebf26fc8c7e982e0c348de4779c5d248d8\",\"dweb:/ipfs/QmVJyoze5ncmy8eD9A4x1EjHRWTXQvn1X28TgpM25MkHad\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface ICasino {\r\n\r\n    event OwnerAdded(address account);\r\n    event OwnerRemoved(address account);\r\n\r\n    event DealerAdded(address account);\r\n    event DealerRemoved(address account);\r\n\r\n}",
+  "sourcePath": "C:\\Users\\Philipp\\Desktop\\Projects\\finalProject\\contracts\\ICasino.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ICasino.sol",
+    "exportedSymbols": {
+      "ICasino": [
+        1321
+      ]
+    },
+    "id": 1322,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1304,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICasino",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 1321,
+        "linearizedBaseContracts": [
+          1321
+        ],
+        "name": "ICasino",
+        "nameLocation": "70:7:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "994a936646fe87ffe4f1e469d3d6aa417d6b855598397f323de5b449f765f0c3",
+            "id": 1308,
+            "name": "OwnerAdded",
+            "nameLocation": "93:10:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1307,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1306,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "112:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1308,
+                  "src": "104:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1305,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "104:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "103:17:2"
+            },
+            "src": "87:34:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "58619076adf5bb0943d100ef88d52d7c3fd691b19d3a9071b555b651fbf418da",
+            "id": 1312,
+            "name": "OwnerRemoved",
+            "nameLocation": "133:12:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1310,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "154:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1312,
+                  "src": "146:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1309,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "146:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "145:17:2"
+            },
+            "src": "127:36:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "98f3b9743e04ddffc992c14d8217e2d0467e51bbec660a88b2c756e6eebc4e64",
+            "id": 1316,
+            "name": "DealerAdded",
+            "nameLocation": "177:11:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1314,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "197:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1316,
+                  "src": "189:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1313,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "189:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "188:17:2"
+            },
+            "src": "171:35:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "70c780c5d8c2660f173d2466e1f3d38e23d251e8d4620403b1577ca4415a3db2",
+            "id": 1320,
+            "name": "DealerRemoved",
+            "nameLocation": "218:13:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1319,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1318,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "240:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1320,
+                  "src": "232:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1317,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "232:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "231:17:2"
+            },
+            "src": "212:37:2"
+          }
+        ],
+        "scope": 1322,
+        "src": "60:194:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:221:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-06-16T20:41:19.127Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

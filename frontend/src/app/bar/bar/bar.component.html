@@ -1,0 +1,31 @@
+<div *ngIf="casinoState" class="card bar">
+    <div class="card-title">
+      <div class="flex-center">
+        <img src="assets/bar.png" alt="Bar">
+        <div>{{ casinoState.address }}</div>
+      </div>
+      <div class="p-inputgroup">
+        <input #inviteAddress type="text" pInputText placeholder="Address">
+        <button pButton (click)="invite(inviteAddress.value); inviteAddress.value = ''">Invite</button>
+      </div>
+    </div>
+
+  <div class="card-content">
+    <div>
+      <div>Ether: {{ casinoState.ether }} Ξ</div>
+      <div *ngIf="casinoState.casinoTokenContractAddress" class="flex-center">{{ casinoState.tokenName}}: {{ casinoState.tokenAmount }}
+        {{ casinoState.tokenSymbol }} (of total {{ casinoState.tokenTotalSupply }} {{ casinoState.tokenSymbol}})&nbsp;<img src="assets/beer.png" alt="Beer Token"/>
+      </div>
+      <div *ngIf="!casinoState.casinoTokenContractAddress" class="flex-center">No Beertoken connected, yet!
+      </div>
+      <div>BeerPrice: {{ getTokenPrice() }} Ξ</div>
+      <div>Last Coinflip: {{casinoState.lastCoinFlip}}</div>
+    </div>
+    <div>
+      <img class="bar-open" [ngClass]="{'active' : casinoState.isOpen }" src="assets/open.png" alt="Bar open"/>
+      <img class="bar-closed" [ngClass]="{'active' : !casinoState.isOpen }" src="assets/closed.png" alt="Bar closed"/>
+    </div>
+  </div>
+</div>
+
+<app-people></app-people>

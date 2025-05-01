@@ -1,0 +1,31 @@
+.bar {
+    grid-area: bar;
+}
+
+.bar .card-content {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bar .p-inputgroup {
+    width: auto;
+}
+
+.bar .card-title {
+    justify-content: space-between;
+}
+
+.bar-open, .bar-closed {
+    display: none;
+    width: 128px;
+    height: 128px;
+}
+
+.bar-open.active, .bar-closed.active {
+    display: block;
+}
+
+app-people {
+    display: contents;
+}

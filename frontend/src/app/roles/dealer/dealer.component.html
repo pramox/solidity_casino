@@ -1,0 +1,30 @@
+<div class="card">
+  <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+      title="{{ person.address }}">{{ person.address }}</span></h5>
+
+  <div class="card-content">
+    <div>
+      <div>Ξ {{ person.ether }}</div>
+      <div class="flex-left">{{ person.casinoTokens ?? '?' }}&nbsp;<img src="assets/beer.png" alt="Beer Token"/></div>
+      <div class="flex-left">Last coin flip was: {{lastCoinFlip}}</div>
+    </div>
+
+    <div style="display: flex; gap: 1rem;">
+      <button pButton style="width: 25%;" label="Open Bar" (click)="openCasino()"></button>
+      <button pButton style="width: 25%;" label="Close Bar" class="p-button-warning" (click)="closeCasino()"></button>
+    </div>
+
+    <div style="display: flex; gap: 1rem;">
+      <button pButton style="width: 25%;" label="Stop betting" (click)="stopBetting()"></button>
+    </div>
+    <div style="display: flex; gap: 1rem;">
+      <button pButton style="width: 25%;" label="Start betting" (click)="startBetting()"></button>
+    </div>
+    <div style="display: flex; gap: 1rem;">
+      <button pButton style="width: 25%;" label="Flip Coin" (click)="flipCoin()"></button>
+    </div>
+
+    <button pButton label="Renounce Dealer Role" class="p-button-warning" (click)="renounceDealer()">
+    </button>
+  </div>
+</div>

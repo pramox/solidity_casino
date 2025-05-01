@@ -1,0 +1,9 @@
+<div *ngIf="person" (click)="openDialog()" class="card">
+  <div class="card-content">
+    <h5 class="flex-left"><img src="assets/{{ role }}.png" alt="{{ role }}">&nbsp;<span>{{ person.address.substring(0, 7) }}</span></h5>
+    <div>
+      <div>Ξ {{ person.ether }}</div>
+      <div class="flex-left">{{ person.casinoTokens ?? '?' }}&nbsp;<img src="assets/beer.png" alt="Beer Token"/></div>
+    </div>
+  </div>
+</div>

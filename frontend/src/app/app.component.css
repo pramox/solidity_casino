@@ -1,0 +1,65 @@
+header {
+    grid-area: header;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #001529;
+    color: white;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+main {
+    grid-area: main;
+    overflow: auto;
+    height: 100%;
+    background-color: #f0f2f5;
+    padding: 1rem 12.5%;
+}
+
+
+footer {
+    grid-area: footer;
+    position: sticky;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A2641;
+    color: white;
+}
+
+.load-bar {
+    position: absolute;
+    right: 2rem;
+}
+
+#bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1rem;
+    grid-template-areas:
+    'bar bar bar'
+    'owner barkeeper dj'
+    'customer customer customer';
+}
+
+@media only screen and (max-width: 950px) {
+    main {
+        padding: 1rem 1rem;
+    }
+
+    header {
+        justify-content: left;
+    }
+}

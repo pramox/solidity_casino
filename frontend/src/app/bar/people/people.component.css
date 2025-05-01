@@ -1,0 +1,26 @@
+.owner {
+    grid-area: owner;
+}
+
+.barkeeper {
+    grid-area: barkeeper;
+}
+
+.dj {
+    grid-area: dj;
+}
+
+.customer {
+    grid-area: customer;
+}
+
+.person-array {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.person-array app-person {
+    flex: 1;
+    min-width: 0;
+}

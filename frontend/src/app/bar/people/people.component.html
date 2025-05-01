@@ -1,0 +1,29 @@
+<div class="card owner">
+    <h6 class="card-title">Owners</h6>
+    <p class="card-content" *ngIf="owners.length==0">Who should manage this bar without owners? Invite them!</p>
+    <div class="card-content" *ngIf="owners.length>0">
+        <div class="person-array">
+        <app-person *ngFor="let owner of owners" [role]='"owner"' [person]="owner"></app-person>
+    </div>
+    </div>
+</div>
+
+<div class="card barkeeper">
+    <h6 class="card-title ">Dealers</h6>
+    <p class="card-content" *ngIf="dealers.length==0">Where should we get beer without barkeepers? Invite them!</p>
+    <div class="card-content" *ngIf="dealers.length>0">
+        <div class="person-array">
+        <app-person *ngFor="let dealer of dealers" [role]='"dealer"' [person]="dealer"></app-person>
+    </div>
+    </div>
+</div>
+
+<div class="card customer">
+    <h6 class="card-title ">Gamblers</h6>
+    <p class="card-content" *ngIf="customers.length==0">No-one here to party :/ Invite someone!</p>
+    <div class="card-content" *ngIf="customers.length>0">
+        <div class="person-array" style="flex-direction: row">
+            <app-person *ngFor="let customer of customers" [role]='"customer"' [person]="customer"></app-person>
+        </div>
+    </div>
+</div>

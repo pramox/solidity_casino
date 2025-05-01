@@ -1,0 +1,63 @@
+  <div class="card">
+    <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+        title="{{ person.address }}">{{ person.address }}</span></h5>
+
+    <div class="card-content">
+      <div>
+        <div>Ξ {{ person.ether }}</div>
+        <div class="flex-left">{{ person.casinoTokens ?? '?' }}&nbsp;<img src="assets/beer.png" alt="Beer Token"/></div>
+      </div>
+
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><img src="assets/beer.png" alt="Beer"/></span>
+        <input #inputSupplyBeer pInputText type="number" value="0"/>
+        <button pButton label="Supply Token" (click)="supplyToken(inputSupplyBeer.value)"></button>
+      </div>
+
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon ether"></span>
+        <input #inputBeerPrice [defaultValue]="currentTokenPrice" pInputText type="number" value="0"/>
+        <button pButton label="Set Token Price" (click)="setCasinoTokenPrice(inputBeerPrice.value)"></button>
+      </div>
+
+      <div class="p-inputgroup">
+        <p-dropdown #inputPromoteSelectedPerson [options]="availablePersons"></p-dropdown>
+        <p-dropdown #inputPromoteRole [options]="availableRolesPromote"></p-dropdown>
+        <button pButton label="Promote" (click)="promoteRole(inputPromoteRole.value, inputPromoteSelectedPerson.value)">
+        </button>
+      </div>
+
+      <div class="p-inputgroup">
+        <p-dropdown #inputRevokeSelectedPerson [options]="availablePersons"></p-dropdown>
+        <p-dropdown #inputRevokeRole [options]="availableRolesRevoke"></p-dropdown>
+        <button pButton label="Revoke" (click)="revokeRole(inputRevokeRole.value, inputRevokeSelectedPerson.value)">
+        </button>
+      </div>
+
+      <!--
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon ether"></span>
+        <input #inputAmount pInputText type="number" value="0"/>
+        <p-dropdown #inputSelectedPerson [options]="availablePersons"></p-dropdown>
+        <button pButton label="Payout" (click)="payout(inputSelectedPerson.value, inputAmount.value)"></button>
+      </div>
+      -->
+
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">BeerToken</span>
+        <input pInputText #inputBeerTokenAddress type="text" placeholder="Address" value="{{ casinoTokenAddress }}">
+        <button pButton label="Set" (click)="setCasinoTokenAddress(inputBeerTokenAddress.value)"></button>
+      </div>
+
+
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><img src="assets/beer.png" alt="Beer"/></span>
+        <input #inputMintBeer pInputText type="number" value="0"/>
+        <button pButton label="Mint Tokens" (click)="mintTokens(inputMintBeer.value)"></button>
+      </div>
+
+      <button pButton label="Renounce Owner Role" class="p-button-warning" style="width: auto;"
+              (click)="renounceOwner()">
+      </button>
+    </div>
+  </div>

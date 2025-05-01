@@ -1,0 +1,35 @@
+<div class="card">
+    <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+            title="{{ person.address }}">{{ person.address }}</span></h5>
+
+    <div class="card-content">
+        <div>
+            <div>Ξ {{ person.ether }}</div>
+            <div class="flex-left">{{ person.casinoTokens ?? '?' }}&nbsp;<img src="assets/beer.png" alt="Beer Token"/>
+            </div>
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon ether"></span>
+            <input #inputBetAmount pInputText type="number" value="0"/>
+            <p-dropdown #coinFlip [options]="coinOptions"></p-dropdown>
+            <button pButton label="Flip Coin" (click)="flipCoin(inputBetAmount.value, coinFlip.value)"></button>
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon ether"></span>
+            <input #inputBuyTokenAmount pInputText type="number" value="0"/>
+            <button pButton label="Buy Tokens" (click)="buyCasinoToken(inputBuyTokenAmount.value)"></button>
+        </div>
+
+        <div class="p-inputgroup">
+            <input #inputSecretNumber pInputText type="number" value="0"/>
+            <p-dropdown #coinFlip [options]="coinOptions"></p-dropdown>
+            <button pButton label="Reveal Coinflip" (click)="revealCoinFlip(inputSecretNumber.value, coinFlip.value )"></button>
+        </div>
+        <div class="p-inputgroup">
+            <input #amount pInputText type="number" value="0"/>
+            <button pButton label="Cashout Token" (click)="cashOutToken(amount.value)"></button>
+        </div>
+    </div>
+</div>

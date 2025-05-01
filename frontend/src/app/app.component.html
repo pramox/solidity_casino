@@ -1,0 +1,21 @@
+<header>
+  <h3>TU Wien Casino</h3>
+
+  <div class="load-bar">
+    <div class="p-inputgroup">
+      <input #address type="text" pInputText placeholder="Casino address">
+      <button pButton type="submit" (click)="submitBarAddress(address.value); address.value = ''">Load Casino
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p-toast></p-toast>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+  <app-bar *ngIf="barInitialized" id="bar"></app-bar>
+</main>
+
+<footer>
+  Latest Block: {{ blockNumber }}
+</footer>
