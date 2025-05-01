@@ -1,80 +1,43 @@
+# Solidity Casino - Ethereum-based Casino
 
-# Final Project
+## Overview
 
-***Deadline: Thu, 15 June 2023, 23:59***
+**Solidity Casino** is a decentralized casino built on the Ethereum blockchain where users can stake their **Ether** to participate in various games. The casino is powered by **Solidity**, a smart contract programming language for Ethereum, and has a connected frontend that allows users to interact with the smart contracts via their browser. The goal is to provide a secure and transparent way for users to stake Ether, play games, and potentially win rewards, all while taking advantage of Ethereum’s blockchain features.
 
-## Topic
+## Short description of functionality: 
+The problem of online-casino websites or any gambling related business: It's not public. Nor the calculation on how the probability is distributed, nor who wins - and how much the person wins is public. (Atleast for the regular casino sites) What better way than to use a smart contract for that and implement a solidity based casino system in which you can gamble (and probably lose ;) )  all your valueable ether. Maybe you will be a millionaire soon!
 
-Choose a topic to your liking for your very own DApp project.  
-If you have no preference for any topic, you may build on the TU Wien Beer Bar by either replacing parts and/or
-extending it. For example, this could be a pub quiz, an extended beer supply or an extended voting board.
+## Off-chain part / frontend:
+In this part you should be able to choose what casino games you want to play and how much you want to bet. Then a request will be sent to the contract, which will calculate the result of the games! You should also be able to view your balance, and play with other players (if that doesn't exceed the time spend)
 
-## Grading
+## On-chain part / contracts:
+In this part the ether / token distribution should take place. The logic of all games will take place there and winnings are caluclation (probably not in the favor of the user, like all casinos - maybe even worse)
+I thought of a few games, like 3-5 which should be fairly easy to implement. For example: 
+CoinFlip = Just pick a side and either lose all or win (almost) double
+Dice games
+A simplified version of blackjack
+A simplified version of roulette
 
-We consider the following aspects:
+## Token concept / standards:
+For every game you will not gamble with ether itself but with CasinoTokens. Usage of in-website currency is usually the go to for casino sites, instead of displaying the real cash values. This will make customers even more addicted and earns us more money! For every game there will be a max / min betting value of tokens. 
 
-- Documentation: Provide the documentation of your project by completing the project details in the `NOTES.md` on git.
-  Add further files as necessary.
-- Complexity: The project should be non-trivial. Rather, it should make use of mappings, roles with RBAC, modifiers,
-  Ether and tokens when reasonable. Moreover, it should provide a simple web interface for interaction with the
-  contract.
-- Correctness: The project should use correct math (big numbers, overflow), include test cases and ensure that neither
-  any ether nor any tokens are lost.
-- Security: Try to avoid that the contract can be depleted by any method used in the challenges.
-- Originality: We would like your projects to be distinguishable from reproductions, clones, forgeries, or derivative
-  works. On a side note: we've already seen too many casinos.
+## Ether usage:
+Users can buy tokens with ether and sell them if selling is currently enabled. 
 
-We place less value on a fancy WebUI, as it is not part of the LVA.
+## Roles:
+Owner (should be able to do everything)
+User (should be able to use functionalities like gamble, pay-in or pay-out)
+Dealer (should be able to update start games and other intern functions) 
 
-**Your project is complex enough if 35 hours of effort are understandable for us.**
+## Data structures:
+mapping (address => uint256) tokens, maybe some data structure that should hold wheter games are activated (maybe a mapping), more will be added during the implementation when I have explicit thoughts on how to execute the implementation
 
-# Tasks
+## Security considerations:
+Solidity version > 0.8, make sure to be careful with calling other contracts (delegatecall vulernability/ reentrancy), caluclation of winnings will always be on the contracts, maybe a commit-reaveal scheme for some games (depending on the games I am going to choose)
 
-# Project Outline (5 Points)
+## Used coding patterns in addition to roles (randomness, commitments, timeouts, deposits or other):
+Randomness, deposits for tokens
 
-***Deadline: Thu, 11 May 2023, 23:59***
-
-The project outline is meant to help you with the scope and complexity of your project.
-
-Prepare and submit an outline for your chosen topic on TUWEL.
-Use the provided markdown template on TUWEL and fill out the provided bullet points.
-
-Furthermore, we provide some sample outlines on TUWEL, which are meant to give you a starting point only and fire up
-your creativity.
-
-Optionally, if you can't come up with an idea on your own, you can submit one of the sample outlines.  
-***However, in this case, no points will be awarded for this task.***
-
-You can also take just parts of the samples, leading to point reductions only.
-
-Regarding the complexity of your project, please consider as a typical breakdown for your efforts:
-
-- 15h Contract development
-- 5h Contract test cases
-- 5h Frontend development
-- 5h Testing and deploying
-- 5h Setup of GitLab, Truffle, etc.
-
-# Implementation (20 Points)
-
-Implement your chosen topic as described in your project outline.
-
-***Keep the grading aspects in mind.***
-
-See the `HOWTO` section for further implementation notes.
-Maybe also revisit the section `Hints for development:` in the `README.md` from your Beer Bar project.
-
-# Submission and Presentation
-
-- Deploy your contracts to the LVA-chain, e.g. by `truffle migrate --network lva`.
-
-- If you use roles, please make us - the person at `addresses.getPublic(94)` - an owner/admin of the contract.
-
-- Make sure that the frontend is deployed to your GitLab Pages instance and works properly.
-
-- Make sure you have committed all your changes to the `main`-branch of your Git-Repository `git.sc.logic.at`!
-
-- Present your project in the review session on `Thu, 22 June 2023`. Reserve a time slot via TUWEL.
 
 ---
 
